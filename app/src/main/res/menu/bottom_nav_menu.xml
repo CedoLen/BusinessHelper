@@ -4,12 +4,25 @@
         android:id="@+id/news"
         android:title="@string/news"
         android:icon="@drawable/ic_news"/>
+
+
     <item
-        android:id="@+id/finance"
-        android:title="@string/finance"
-        android:icon="@drawable/ic_finance"/>
+        android:id="@+id/catalog"
+        android:title="@string/catalog"
+        android:icon="@drawable/ic_catalog"/>
+
     <item
-        android:id="@+id/tasks"
-        android:title="@string/tasks"
-        android:icon="@drawable/ic_tasks"/>
+        android:id="@+id/basket"
+        android:title="@string/basket"
+        android:icon="@drawable/ic_basket"/>
+
+   <item
+       android:id="@+id/order"
+       android:title="@string/orders"
+       android:icon="@drawable/ic_order"/>
+
+    <item
+        android:id="@+id/people"
+        android:title="@string/counterparties"
+        android:icon="@drawable/ic_people"/>
 </menu>

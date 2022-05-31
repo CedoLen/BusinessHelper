@@ -11,8 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCurrentFragment(fragment: Fragment)=
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment,fragment)
-            commit()
+            replace(R.id.flFragment,fragment).commit()
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,18 +19,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation = findViewById(R.id.bottomNavigationView)
-        val firstFragment=NewsFragment()
-        val secondFragment=FinanceFragment()
-        val thirdFragment=TasksFragment()
+        val newsFragment = NewsFragment()
+        val financeFragment = FinanceFragment()
+        val tasksFragment = TasksFragment()
+        val catalogFragment = CatalogFragment()
+        val orderFragment = OrderFragment()
+        val basketFragment = BasketFragment()
+        val counterpartiesFragment = CounterpartiesFragment()
 
-        setCurrentFragment(firstFragment)
 
+        setCurrentFragment(newsFragment)
 
         navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.news->setCurrentFragment(firstFragment)
-                R.id.finance->setCurrentFragment(secondFragment)
-                R.id.tasks->setCurrentFragment(thirdFragment)
+                R.id.news->setCurrentFragment(newsFragment)
+                R.id.catalog->setCurrentFragment(catalogFragment)
+                R.id.basket->setCurrentFragment(basketFragment)
+                R.id.people->setCurrentFragment(counterpartiesFragment)
+                R.id.order->setCurrentFragment(orderFragment)
 
             }
             true
