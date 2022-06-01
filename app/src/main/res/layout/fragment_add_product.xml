@@ -4,18 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.addfragment.AddProductFragment">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="добавление продукта"
-        android:textColor="@color/black"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_marginBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/header"
+            android:text="Добавление товара/услуги"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textViewField"
+            android:text="Название товара/услуги"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edittext_style"
+            android:hint="Название товара/услкги"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textViewField"
+            android:text="Цена товара/услуги"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edittext_style"
+            android:hint="Цена товара/услкги"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textViewField"
+            android:text="Еденица измерения"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edittext_style"
+            android:hint="Еденица измерения"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:background="@color/light_blue"
+                style="@style/textViewField"
+                android:text="Быстрый план расходов"/>
+
+            <GridLayout
+                android:layout_marginStart="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article1"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:layout_width="72dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article2"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:layout_width="72dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article3"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:layout_width="72dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article4"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:layout_width="72dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article5"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:layout_width="72dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article6"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:layout_width="72dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article7"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:layout_width="72dp"
+                    android:textColorHint="@color/black"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+            </GridLayout>
+        </LinearLayout>
+</ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -14,4 +14,5 @@
     <color name="textHintColor_edit">#6B778C</color>
     <color name="textColor_edit">#172B4D</color>
     <color name="red">#D20000</color>
+    <color name="light_blue">#C5EDFF</color>
 </resources>

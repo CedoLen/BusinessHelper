@@ -8,7 +8,7 @@
     tools:context=".RegistrationActivity">
 
     <EditText
-        android:id="@+id/editEmailAddress"
+        android:id="@+id/registEmailAddress"
         style="@style/edittext_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editPasswordRepeat"
+        android:id="@+id/registPasswordRepeat"
         style="@style/edittext_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,10 +45,10 @@
         style="@style/styleTextView"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/registEmailAddress" />
 
     <EditText
-        android:id="@+id/editPassword"
+        android:id="@+id/registPassword"
         style="@style/edittext_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPasswordRepeat" />
+        app:layout_constraintTop_toBottomOf="@+id/registPasswordRepeat" />
 
     <TextView
         android:id="@+id/textView5"
@@ -84,7 +84,7 @@
         android:textColor="@color/white"
         style="@style/styleTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/registPassword" />
 
     <TextView
         android:id="@+id/textView4"
