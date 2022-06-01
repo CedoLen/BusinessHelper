@@ -32,7 +32,7 @@
         <item name="android:height">20px</item>
         <item name="android:textColor">@color/dark_green</item>
         <item name="android:textSize">14dp</item>
-        <item name="android:width">200sp</item>s
+        <item name="android:width">200sp</item>
         <item name="android:background">@drawable/outlined_button_shape</item>
     </style>
 
@@ -40,5 +40,18 @@
         <item name="android:background">@color/main_background</item>
         <item name="android:textColor">@color/white</item>
         <item name="colorPrimary">@color/textHintColor_edit</item>
+    </style>
+    
+    <style name="floatingButtonAdd" parent="Widget.Design.FloatingActionButton">
+        <item name="backgroundTint">@color/dark_green</item>
+        <item name="android:src">@drawable/ic_plus</item>
+    </style>
+    <style name="floatingButtonSave" parent="Widget.Design.FloatingActionButton">
+        <item name="backgroundTint">@color/dark_green</item>
+        <item name="android:src">@drawable/ic_check</item>
+    </style>
+    <style name="floatingButtonRemove" parent="Widget.Design.FloatingActionButton">
+        <item name="backgroundTint">@color/red</item>
+        <item name="android:src">@drawable/ic_trash</item>
     </style>
 </resources>
