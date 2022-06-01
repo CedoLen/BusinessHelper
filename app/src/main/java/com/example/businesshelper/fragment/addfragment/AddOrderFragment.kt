@@ -1,10 +1,11 @@
-package com.example.businesshelper
+package com.example.businesshelper.fragment.addfragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.businesshelper.R
 
-class BasketFragment:Fragment(R.layout.fragment_basket) {
+class AddOrderFragment:Fragment(R.layout.fragment_add_order){
 }

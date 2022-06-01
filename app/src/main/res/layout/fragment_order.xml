@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderFragment">
+    tools:context=".fragment.OrderFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,18 +21,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="345dp"
-            android:layout_marginEnd="164dp"
-            android:gravity="center"
+            android:layout_marginTop="337dp"
+            android:layout_marginEnd="143dp"
             android:text="@string/orders"
             android:textSize="20dp" />
     </RelativeLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/openAddOrder"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         style="@style/floatingButtonAdd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

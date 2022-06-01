@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/catalogFragment">
+
+    <fragment
+        android:id="@+id/counterpartiesFragment"
+        android:name="com.example.businesshelper.fragment.CounterpartiesFragment"
+        android:label="fragment_counterparties"
+        tools:layout="@layout/fragment_counterparties" >
+        <action
+            android:id="@+id/action_counterpartiesFragment_to_addCounterpartiesFragment"
+            app:destination="@id/addCounterpartiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCounterpartiesFragment"
+        android:name="com.example.businesshelper.fragment.addfragment.AddCounterpartiesFragment"
+        android:label="fragment_add_counterparties"
+        tools:layout="@layout/fragment_add_counterparties" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.businesshelper.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.businesshelper.fragment.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" >
+        <action
+            android:id="@+id/action_orderFragment_to_addOrderFragment"
+            app:destination="@id/addOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.example.businesshelper.fragment.CatalogFragment"
+        android:label="fragment_catalog"
+        tools:layout="@layout/fragment_catalog" >
+        <action
+            android:id="@+id/action_catalogFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.example.businesshelper.fragment.BasketFragment"
+        android:label="fragment_basket"
+        tools:layout="@layout/fragment_basket" />
+    <fragment
+        android:id="@+id/addOrderFragment"
+        android:name="com.example.businesshelper.fragment.addfragment.AddOrderFragment"
+        android:label="fragment_add_order"
+        tools:layout="@layout/fragment_add_order" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.businesshelper.fragment.addfragment.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" />
+</navigation>
