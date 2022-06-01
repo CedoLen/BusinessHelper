@@ -8,7 +8,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     private lateinit var navigation: BottomNavigationView
 
-
     private fun setCurrentFragment(fragment: Fragment)=
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment,fragment).commit()
@@ -28,11 +27,10 @@ class MainActivity : AppCompatActivity() {
         val counterpartiesFragment = CounterpartiesFragment()
 
 
-        setCurrentFragment(newsFragment)
+        setCurrentFragment(catalogFragment)
 
         navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.news->setCurrentFragment(newsFragment)
                 R.id.catalog->setCurrentFragment(catalogFragment)
                 R.id.basket->setCurrentFragment(basketFragment)
                 R.id.people->setCurrentFragment(counterpartiesFragment)
