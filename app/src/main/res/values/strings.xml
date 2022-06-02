@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BusinessHelper</string>
+    <string name="app_name">Бизнес-помощник</string>
     <string name="registration">Регистрация</string>
     <string name="news">Новости</string>
     <string name="finance">Финансы</string>
