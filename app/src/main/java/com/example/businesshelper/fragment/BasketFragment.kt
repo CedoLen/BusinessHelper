@@ -26,8 +26,6 @@ import java.util.ArrayList
 class BasketFragment:Fragment(R.layout.fragment_basket) {
     private var _binding: FragmentBasketBinding? = null
     private val binding get() = _binding!!
-    private lateinit var database: DatabaseReference
-    private lateinit var statusList:ArrayList<Status>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,30 +34,6 @@ class BasketFragment:Fragment(R.layout.fragment_basket) {
     ): View? {
         _binding = FragmentBasketBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        database = Firebase.database.reference
-
-        val recyclerView: RecyclerView = root.findViewById(R.id.temp_recyclerView)
-
-        statusList = arrayListOf<Status>()
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-                if(dataSnapshot.exists()) {
-                    for (item in dataSnapshot.children) {
-                        val child = item.getValue(Status::class.java)
-                        statusList.add(child!!)
-                    }
-
-                    recyclerView.adapter = listAdapter(requireContext(),statusList)
-                }
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
-            }
-        }
-        database.addValueEventListener(postListener)
 
         return root
     }
