@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         auth = FirebaseAuth.getInstance();
-        if (auth.getCurrentUser() != null) {
+        if (auth.currentUser != null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -30,13 +30,19 @@ class LoginActivity : AppCompatActivity() {
     fun signInApp(view: View) {
         if(!email.text.isNullOrEmpty()&&!password.text.isNullOrEmpty())
         {
-            auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+            try {
+                auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                        }
                     }
-                }
+            }
+            catch (e:Exception)
+            {
+                Toast.makeText(applicationContext,e.message.toString(),Toast.LENGTH_LONG).show()
+            }
         }
         else
             Toast.makeText(applicationContext,"Заполните поля.", Toast.LENGTH_SHORT).show()
