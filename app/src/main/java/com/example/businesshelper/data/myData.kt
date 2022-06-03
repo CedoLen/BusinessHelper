@@ -31,6 +31,7 @@ data class Order(
 )
 @IgnoreExtraProperties
 data class Counterparty(
+    val id:String?="",
     val email: String?="",
     val company:String?="",
     val phone:String?="",
@@ -41,6 +42,7 @@ data class Counterparty(
 )
 @IgnoreExtraProperties
 data class Product(
+    val id: String?="",
     val title:String?="",
     val price:Long?=0,
     val unit:String?="",
@@ -59,10 +61,3 @@ val products:List<Product>?=null,
 val orders:List<Order>?=null,
 val count:Long?=0
 )
-
-fun getRandomString(length: Int) : String {
-    val charset = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz0123456789"
-    return (1..length)
-        .map { charset.random() }
-        .joinToString("")
-}

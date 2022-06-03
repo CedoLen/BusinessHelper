@@ -10,16 +10,16 @@ import android.widget.Toast
 import com.example.businesshelper.R
 import com.example.businesshelper.data.Counterparty
 import com.example.businesshelper.data.Product
-import com.example.businesshelper.data.getRandomString
 import com.example.businesshelper.databinding.FragmentAddCounterpartiesBinding
 import com.example.businesshelper.databinding.FragmentAddProductBinding
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import java.util.*
 
 class AddProductFragment:Fragment(R.layout.fragment_add_product){
-    private val database: DatabaseReference = Firebase.database.reference
+    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,9 +27,11 @@ class AddProductFragment:Fragment(R.layout.fragment_add_product){
         savedInstanceState: Bundle?
     ): View? {
         val bind = FragmentAddProductBinding.inflate(inflater, container, false)
+        database = FirebaseDatabase.getInstance().getReference("catalog")
 
         bind.addNewItem.setOnClickListener {
             try {
+                val id= database.key
                 val title = bind.root.findViewById<EditText>(R.id.title_product).text.toString()
                 val price = bind.root.findViewById<EditText>(R.id.price_product).text.toString().toLong()
                 val unit = bind.root.findViewById<EditText>(R.id.unit_product).text.toString()
@@ -43,6 +45,7 @@ class AddProductFragment:Fragment(R.layout.fragment_add_product){
                 val dateRegistration = Calendar.getInstance().time.toString()
 
                 val product = Product(
+                    id,
                     title,
                     price,
                     unit,
@@ -55,7 +58,7 @@ class AddProductFragment:Fragment(R.layout.fragment_add_product){
                     other,
                     dateRegistration
                 )
-                database.child("catalog").child(getRandomString(10)).setValue(product)
+                database.push().setValue(product)
             }
             catch (e:Exception)
             {

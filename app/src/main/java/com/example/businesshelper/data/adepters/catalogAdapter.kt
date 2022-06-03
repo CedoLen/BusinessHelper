@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.businesshelper.R
 import com.example.businesshelper.data.Counterparty
@@ -12,9 +13,17 @@ import com.example.businesshelper.data.Product
 import java.util.ArrayList
 
 class catalogAdapter(val context: Context, val list: ArrayList<Product>): RecyclerView.Adapter<catalogAdapter.MyVM>() {
-    class MyVM(itemView: View):RecyclerView.ViewHolder(itemView) {
+
+    inner class MyVM(itemView: View):RecyclerView.ViewHolder(itemView) {
         val title:TextView = itemView.findViewById(R.id.title_product_VM)
         val price:TextView = itemView.findViewById(R.id.price_product_VM)
+
+        init {
+            itemView.setOnClickListener{ v:View->
+                Toast.makeText(itemView.context,"Функция редактирования находиться в разработке.",
+                    Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyVM {

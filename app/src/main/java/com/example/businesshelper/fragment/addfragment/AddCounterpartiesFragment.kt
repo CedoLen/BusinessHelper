@@ -9,15 +9,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.businesshelper.R
 import com.example.businesshelper.data.Counterparty
-import com.example.businesshelper.data.getRandomString
 import com.example.businesshelper.databinding.FragmentAddCounterpartiesBinding
 import com.example.businesshelper.databinding.FragmentCounterpartiesBinding
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class AddCounterpartiesFragment:Fragment(R.layout.fragment_add_counterparties) {
-    private val database: DatabaseReference =Firebase.database.reference
+    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,9 +25,11 @@ class AddCounterpartiesFragment:Fragment(R.layout.fragment_add_counterparties) {
         savedInstanceState: Bundle?
     ): View? {
         val bind = FragmentAddCounterpartiesBinding.inflate(inflater, container, false)
+        database =FirebaseDatabase.getInstance().getReference("counterparties")
 
         bind.addNewItem.setOnClickListener {
             try {
+                val id=database.key
                 val email = bind.root.findViewById<EditText>(R.id.email_counterparty).text.toString()
                 val company = bind.root.findViewById<EditText>(R.id.name_counterparty).text.toString()
                 val phone = bind.root.findViewById<EditText>(R.id.phone_counterparty).text.toString()
@@ -37,6 +39,7 @@ class AddCounterpartiesFragment:Fragment(R.layout.fragment_add_counterparties) {
                 val actualAd = bind.root.findViewById<EditText>(R.id.actualAddress_counterparty).text.toString()
 
                 val human = Counterparty(
+                    id,
                     email,
                     company,
                     phone,
@@ -45,7 +48,7 @@ class AddCounterpartiesFragment:Fragment(R.layout.fragment_add_counterparties) {
                     legalAd,
                     actualAd
                 )
-                database.child("counterparties").child(getRandomString(10)).setValue(human)
+                database.push().setValue(human)
             }
             catch (e:Exception)
             {

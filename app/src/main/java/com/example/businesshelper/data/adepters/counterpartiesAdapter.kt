@@ -24,7 +24,7 @@ class counterpartiesAdapter(val context: Context, val list: ArrayList<Counterpar
             val email:TextView=itemView.findViewById(R.id.email_counter_VM)
 
           init {
-              itemView.setOnClickListener(object : View.OnClickListener {
+              /*itemView.setOnClickListener(object : View.OnClickListener {
                   override fun onClick(v: View?) {
                       val fragment = v!!.context as Fragment
                       val editFragment = EditCounterpartyFragment()
@@ -39,7 +39,10 @@ class counterpartiesAdapter(val context: Context, val list: ArrayList<Counterpar
                               .commit()
                       }
                   }
-              })
+              })*/
+              itemView.setOnClickListener{ v:View->
+                  Toast.makeText(itemView.context,"Функция редактирования находиться в разработке.",Toast.LENGTH_LONG).show()
+              }
           }
       }
 
