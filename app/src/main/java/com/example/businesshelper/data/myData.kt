@@ -44,13 +44,13 @@ data class Product(
     val title:String?="",
     val price:Long?=0,
     val unit:String?="",
-    val rawMaterials:Double,
-    val salary:Double,
-    val socialNeeds:Double,
-    val depreciation:Double,
-    val taxes:Double,
-    val storage:Double,
-    val other:Double,
+    val rawMaterials:Double?=0.0,
+    val salary:Double?=0.0,
+    val socialNeeds:Double?=0.0,
+    val depreciation:Double?=0.0,
+    val taxes:Double?=0.0,
+    val storage:Double?=0.0,
+    val other:Double?=0.0,
     val dateRegistration:String?=""
 )
 @IgnoreExtraProperties

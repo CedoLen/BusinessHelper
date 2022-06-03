@@ -16,14 +16,6 @@ class OrderFragment:Fragment(R.layout.fragment_order) {
         savedInstanceState: Bundle?
     ): View? {
         val bind = FragmentOrderBinding.inflate(layoutInflater)
-        val fragment = AddOrderFragment()
-        bind.openAddOrder.setOnClickListener{
-            fragmentManager?.beginTransaction()?.apply {
-                replace(R.id.flFragment,fragment, AddOrderFragment::class.java.simpleName)
-                    .addToBackStack(null)
-                    .commit()
-            }
-        }
         return bind.root
     }
 }

@@ -31,6 +31,8 @@
             style="@style/textViewField"
             android:text="Название товара/услуги"/>
         <EditText
+            android:id="@+id/title_product"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/edittext_style"
@@ -41,6 +43,8 @@
             style="@style/textViewField"
             android:text="Цена товара/услуги"/>
         <EditText
+            android:id="@+id/price_product"
+            android:inputType="numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/edittext_style"
@@ -51,6 +55,8 @@
             style="@style/textViewField"
             android:text="Еденица измерения"/>
         <EditText
+            android:id="@+id/unit_product"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/edittext_style"
@@ -77,11 +83,11 @@
                     android:text="@string/article1"
                     style="@style/textViewBlack"/>
                 <EditText
+                    android:id="@+id/rawMaterials_product"
+                    android:inputType="number"
                     android:layout_width="72dp"
-                    android:textColorHint="@color/black"
                     android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/black"/>
+                    android:hint="0" />
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -91,11 +97,11 @@
                     android:text="@string/article2"
                     style="@style/textViewBlack"/>
                 <EditText
+                    android:id="@+id/salary_product"
+                    android:inputType="number"
                     android:layout_width="72dp"
-                    android:textColorHint="@color/black"
                     android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/black"/>
+                    android:hint="0" />
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -105,11 +111,11 @@
                     android:text="@string/article3"
                     style="@style/textViewBlack"/>
                 <EditText
+                    android:id="@+id/socialNeeds"
+                    android:inputType="number"
                     android:layout_width="72dp"
-                    android:textColorHint="@color/black"
                     android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/black"/>
+                    android:hint="0" />
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -119,11 +125,11 @@
                     android:text="@string/article4"
                     style="@style/textViewBlack"/>
                 <EditText
+                    android:inputType="number"
+                    android:id="@+id/depreciation_product"
                     android:layout_width="72dp"
-                    android:textColorHint="@color/black"
                     android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/black"/>
+                    android:hint="0" />
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -133,11 +139,11 @@
                     android:text="@string/article5"
                     style="@style/textViewBlack"/>
                 <EditText
+                    android:id="@+id/taxes_product"
+                    android:inputType="number"
                     android:layout_width="72dp"
-                    android:textColorHint="@color/black"
                     android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/black"/>
+                    android:hint="0" />
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -147,11 +153,11 @@
                     android:text="@string/article6"
                     style="@style/textViewBlack"/>
                 <EditText
+                    android:id="@+id/storage_product"
+                    android:inputType="number"
                     android:layout_width="72dp"
-                    android:textColorHint="@color/black"
                     android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/black"/>
+                    android:hint="0" />
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -161,11 +167,11 @@
                     android:text="@string/article7"
                     style="@style/textViewBlack"/>
                 <EditText
+                    android:id="@+id/other_product"
+                    android:inputType="number"
                     android:layout_width="72dp"
-                    android:textColorHint="@color/black"
                     android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/black"/>
+                    android:hint="0" />
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -173,6 +179,7 @@
         </LinearLayout>
 </ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNewItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
