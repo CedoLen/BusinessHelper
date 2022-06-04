@@ -31,6 +31,10 @@
                 android:textSize="16dp"
                 tools:text="@tools:sample/backgrounds/scenic" />
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/price_product_VM"
                 android:layout_width="wrap_content"
@@ -39,6 +43,15 @@
                 android:textColor="@color/black"
                 android:text="цена"
                 android:textSize="16dp" />
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="руб."/>
+
+            </LinearLayout>
         </LinearLayout>
 
         <ImageView

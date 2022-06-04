@@ -49,6 +49,7 @@
         </LinearLayout>
 
         <ImageButton
+            android:id="@+id/ellipsis_button_counter"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"

@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -40,6 +41,17 @@ class counterpartiesAdapter(val context: Context, val list: ArrayList<Counterpar
                       }
                   }
               })*/
+              /*try {
+
+                  itemView.findViewById<ImageButton>(R.id.ellipsis_button_counter)
+                      .setOnClickListener { view: View ->
+                          list.remove(list[adapterPosition])
+                      }
+              }
+              catch (e:Exception)
+              {
+                  Toast.makeText(itemView.context,e.message.toString(),Toast.LENGTH_LONG).show()
+              }*/
               itemView.setOnClickListener{ v:View->
                   Toast.makeText(itemView.context,"Функция редактирования находиться в разработке.",Toast.LENGTH_LONG).show()
               }
