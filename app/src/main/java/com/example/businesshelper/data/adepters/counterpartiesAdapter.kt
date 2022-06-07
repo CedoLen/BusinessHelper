@@ -16,47 +16,15 @@ import com.example.businesshelper.fragment.addfragment.AddCounterpartiesFragment
 import com.example.businesshelper.fragment.editfragment.EditCounterpartyFragment
 import java.util.ArrayList
 
-class counterpartiesAdapter(val context: Context, val list: ArrayList<Counterparty>):
+class counterpartiesAdapter(val context: Context, val list: ArrayList<Counterparty>, private val cellClickListener: counterpartiesAdapter.CellClickListener):
     RecyclerView.Adapter<counterpartiesAdapter.MyVM>() {
 
-     inner class MyVM(itemView: View):RecyclerView.ViewHolder(itemView) {
+      class MyVM(itemView: View):RecyclerView.ViewHolder(itemView) {
             val title: TextView =itemView.findViewById(R.id.title_counter_VM)
             val phone:TextView=itemView.findViewById(R.id.phone_counter_VM)
             val email:TextView=itemView.findViewById(R.id.email_counter_VM)
 
-          init {
-              /*itemView.setOnClickListener(object : View.OnClickListener {
-                  override fun onClick(v: View?) {
-                      val fragment = v!!.context as Fragment
-                      val editFragment = EditCounterpartyFragment()
-
-                      fragment.fragmentManager?.beginTransaction()?.apply {
-                          replace(
-                              R.id.flFragment,
-                              editFragment,
-                              EditCounterpartyFragment::class.java.simpleName
-                          )
-                              .addToBackStack(null)
-                              .commit()
-                      }
-                  }
-              })*/
-              /*try {
-
-                  itemView.findViewById<ImageButton>(R.id.ellipsis_button_counter)
-                      .setOnClickListener { view: View ->
-                          list.remove(list[adapterPosition])
-                      }
-              }
-              catch (e:Exception)
-              {
-                  Toast.makeText(itemView.context,e.message.toString(),Toast.LENGTH_LONG).show()
-              }*/
-              itemView.setOnClickListener{ v:View->
-                  Toast.makeText(itemView.context,"Функция редактирования находиться в разработке.",Toast.LENGTH_LONG).show()
-              }
-          }
-      }
+     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyVM {
         val root = LayoutInflater.from(context).inflate(R.layout.counterparty_card,parent,false)
@@ -67,9 +35,18 @@ class counterpartiesAdapter(val context: Context, val list: ArrayList<Counterpar
         holder.title.text=list[position].company
         holder.email.text=list[position].email
         holder.phone.text=list[position].phone
+
+        val data = list[position]
+        holder.itemView.setOnClickListener {
+            cellClickListener.onClickCounterListener(data)
+        }
     }
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    interface CellClickListener {
+        fun onClickCounterListener(data: Counterparty)
     }
 }

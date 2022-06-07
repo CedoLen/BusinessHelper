@@ -14,7 +14,7 @@
 
     <string name="start">Start</string>
     <string name="close">Close</string>
-    
+
     <string name="article1">Сырье и материалы</string>
     <string name="article2">Оплата труда</string>
     <string name="article3">Соц. нужды</string>
@@ -22,4 +22,5 @@
     <string name="article5">Налоги</string>
     <string name="article6">Хранение</string>
     <string name="article7">Прочее</string>
+
 </resources>

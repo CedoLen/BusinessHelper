@@ -14,6 +14,8 @@ import com.example.businesshelper.data.Counterparty
 import com.example.businesshelper.data.Status
 import com.example.businesshelper.data.adepters.counterpartiesAdapter
 import com.example.businesshelper.databinding.FragmentCounterpartiesBinding
+import com.example.businesshelper.fragment.addfragment.AddProductFragment
+import com.example.businesshelper.fragment.editfragment.EditCounterpartyFragment
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
@@ -21,21 +23,25 @@ import com.google.firebase.ktx.Firebase
 import java.util.ArrayList
 
 
-class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties){
+class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
+    counterpartiesAdapter.CellClickListener {
 
     private lateinit var database: DatabaseReference
     private lateinit var counterList: ArrayList<Counterparty>
+    private lateinit var bind: FragmentCounterpartiesBinding
+    private var addFragment: AddCounterpartiesFragment = AddCounterpartiesFragment()
+    private var editFragment:EditCounterpartyFragment = EditCounterpartyFragment()
+    private lateinit var recyclerView:RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val bind = FragmentCounterpartiesBinding.inflate(layoutInflater)
-        val fragment = AddCounterpartiesFragment()
+        bind = FragmentCounterpartiesBinding.inflate(layoutInflater)
         bind.openAddCounterparties.setOnClickListener{
             fragmentManager?.beginTransaction()?.apply {
-                replace(R.id.flFragment,fragment, AddCounterpartiesFragment::class.java.simpleName)
+                replace(R.id.flFragment,addFragment, AddCounterpartiesFragment::class.java.simpleName)
                     .addToBackStack(null)
                     .commit()
             }
@@ -44,7 +50,7 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties){
 
         database = FirebaseDatabase.getInstance().getReference("counterparties")
 
-        val recyclerView: RecyclerView = bind.root.findViewById(R.id.recyclerView_counter)
+        recyclerView = bind.root.findViewById(R.id.recyclerView_counter)
         recyclerView.setHasFixedSize(true)
 
         counterList = arrayListOf<Counterparty>()
@@ -57,7 +63,7 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties){
                         val human = item.getValue(Counterparty::class.java)
                         counterList.add(human!!)
                     }
-                    recyclerView.adapter = counterpartiesAdapter(requireContext(),counterList)
+                    recyclerView.adapter = counterpartiesAdapter(requireContext(),counterList, this@CounterpartiesFragment )
                 }
             }
 
@@ -68,5 +74,13 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties){
         })
 
     return bind.root
+    }
+
+    override fun onClickCounterListener(data: Counterparty) {
+        fragmentManager?.beginTransaction()?.apply {
+            replace(R.id.flFragment,editFragment,EditCounterpartyFragment::class.java.simpleName)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 }

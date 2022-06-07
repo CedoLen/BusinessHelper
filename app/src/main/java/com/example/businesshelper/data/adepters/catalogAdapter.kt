@@ -12,7 +12,8 @@ import com.example.businesshelper.data.Counterparty
 import com.example.businesshelper.data.Product
 import java.util.ArrayList
 
-class catalogAdapter(val context: Context, val list: ArrayList<Product>): RecyclerView.Adapter<catalogAdapter.MyVM>() {
+class catalogAdapter(val context: Context, val list: ArrayList<Product>, private val cellClickListener: catalogAdapter.CellClickListener)
+    : RecyclerView.Adapter<catalogAdapter.MyVM>() {
 
     inner class MyVM(itemView: View):RecyclerView.ViewHolder(itemView) {
         val title:TextView = itemView.findViewById(R.id.title_product_VM)
@@ -34,9 +35,18 @@ class catalogAdapter(val context: Context, val list: ArrayList<Product>): Recycl
     override fun onBindViewHolder(holder: catalogAdapter.MyVM, position: Int) {
         holder.title.text = list[position].title
         holder.price.text= list[position].price.toString()
+
+        val data = list[position]
+        holder.itemView.setOnClickListener {
+            cellClickListener.onClickProductListener(data)
+        }
     }
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    interface CellClickListener {
+        fun onClickProductListener(data: Product)
     }
 }

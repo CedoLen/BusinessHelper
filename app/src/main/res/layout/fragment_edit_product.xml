@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.editfragment.EditProductFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_margin="15dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/header"
+                android:text="Измененине товара/услуги"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textViewField"
+                android:text="Название товара/услуги"/>
+            <EditText
+                android:id="@+id/title_product"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edittext_style"
+                android:hint="Название товара/услкги"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textViewField"
+                android:text="Цена товара/услуги"/>
+            <EditText
+                android:id="@+id/price_product"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edittext_style"
+                android:hint="Цена товара/услкги"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textViewField"
+                android:text="Еденица измерения"/>
+            <EditText
+                android:id="@+id/unit_product"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edittext_style"
+                android:hint="Еденица измерения"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:background="@color/light_blue"
+                style="@style/textViewField"
+                android:text="Быстрый план расходов"/>
+
+            <GridLayout
+                android:layout_marginStart="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article1"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:id="@+id/rawMaterials_product"
+                    android:inputType="number"
+                    android:layout_width="72dp"
+                    android:gravity="center"
+                    android:hint="0" />
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article2"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:id="@+id/salary_product"
+                    android:inputType="number"
+                    android:layout_width="72dp"
+                    android:gravity="center"
+                    android:hint="0" />
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article3"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:id="@+id/socialNeeds"
+                    android:inputType="number"
+                    android:layout_width="72dp"
+                    android:gravity="center"
+                    android:hint="0" />
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article4"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:inputType="number"
+                    android:id="@+id/depreciation_product"
+                    android:layout_width="72dp"
+                    android:gravity="center"
+                    android:hint="0" />
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article5"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:id="@+id/taxes_product"
+                    android:inputType="number"
+                    android:layout_width="72dp"
+                    android:gravity="center"
+                    android:hint="0" />
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article6"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:id="@+id/storage_product"
+                    android:inputType="number"
+                    android:layout_width="72dp"
+                    android:gravity="center"
+                    android:hint="0" />
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:text="@string/article7"
+                    style="@style/textViewBlack"/>
+                <EditText
+                    android:id="@+id/other_product"
+                    android:inputType="number"
+                    android:layout_width="72dp"
+                    android:gravity="center"
+                    android:hint="0" />
+                <TextView
+                    android:text="%"
+                    style="@style/textViewBlack"/>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNewItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        style="@style/floatingButtonSave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
