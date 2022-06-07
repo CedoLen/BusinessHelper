@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button2"
         style="@style/button_style"
         android:layout_width="wrap_content"

@@ -87,7 +87,8 @@
                     android:inputType="number"
                     android:layout_width="72dp"
                     android:gravity="center"
-                    android:hint="0" />
+                    android:hint="0"
+                    style="@style/editArticle_style"/>
                 <TextView
                     android:text="%"
                     style="@style/textViewBlack"/>
@@ -98,6 +99,7 @@
                     style="@style/textViewBlack"/>
                 <EditText
                     android:id="@+id/salary_product"
+                    style="@style/editArticle_style"
                     android:inputType="number"
                     android:layout_width="72dp"
                     android:gravity="center"
@@ -112,6 +114,7 @@
                     style="@style/textViewBlack"/>
                 <EditText
                     android:id="@+id/socialNeeds"
+                    style="@style/editArticle_style"
                     android:inputType="number"
                     android:layout_width="72dp"
                     android:gravity="center"
@@ -126,6 +129,7 @@
                     style="@style/textViewBlack"/>
                 <EditText
                     android:inputType="number"
+                    style="@style/editArticle_style"
                     android:id="@+id/depreciation_product"
                     android:layout_width="72dp"
                     android:gravity="center"
@@ -140,6 +144,7 @@
                     style="@style/textViewBlack"/>
                 <EditText
                     android:id="@+id/taxes_product"
+                    style="@style/editArticle_style"
                     android:inputType="number"
                     android:layout_width="72dp"
                     android:gravity="center"
@@ -154,6 +159,7 @@
                     style="@style/textViewBlack"/>
                 <EditText
                     android:id="@+id/storage_product"
+                    style="@style/editArticle_style"
                     android:inputType="number"
                     android:layout_width="72dp"
                     android:gravity="center"
@@ -168,6 +174,7 @@
                     style="@style/textViewBlack"/>
                 <EditText
                     android:id="@+id/other_product"
+                    style="@style/editArticle_style"
                     android:inputType="number"
                     android:layout_width="72dp"
                     android:gravity="center"
