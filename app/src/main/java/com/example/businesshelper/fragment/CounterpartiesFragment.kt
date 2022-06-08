@@ -64,6 +64,7 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
                         val human = item.getValue(Counterparty::class.java)
                         counterList.add(human!!)
                     }
+                    counterList.sortBy { item->item.company }
                     recyclerView.adapter = counterpartiesAdapter(requireContext(),counterList, this@CounterpartiesFragment )
                 }
             }

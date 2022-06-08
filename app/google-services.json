@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "918465133019",
+    "firebase_url": "https://dbbusinessassist-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "dbbusinessassist",
+    "storage_bucket": "dbbusinessassist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918465133019:android:3fca768e916f53af5bcffe",
+        "android_client_info": {
+          "package_name": "com.example.business_assistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918465133019-8o6r3rive81u8kp9ni7eokounh4l34q0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPPV563Mh3tZo73CnayxwoEo7FPe9qdyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918465133019-8o6r3rive81u8kp9ni7eokounh4l34q0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918465133019:android:9938d7e5cffa1f7c5bcffe",
+        "android_client_info": {
+          "package_name": "com.example.businesshelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918465133019-8o6r3rive81u8kp9ni7eokounh4l34q0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPPV563Mh3tZo73CnayxwoEo7FPe9qdyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918465133019-8o6r3rive81u8kp9ni7eokounh4l34q0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

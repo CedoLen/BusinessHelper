@@ -57,6 +57,7 @@ class CatalogFragment:Fragment(R.layout.fragment_catalog), catalogAdapter.CellCl
                         val product = item.getValue(Product::class.java)
                         productList.add(product!!)
                     }
+                    productList.sortBy { item->item.title }
                     recyclerView.adapter = catalogAdapter(requireContext(),productList, this@CatalogFragment)
                 }
             }

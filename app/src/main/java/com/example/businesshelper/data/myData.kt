@@ -46,13 +46,13 @@ data class Product(
     var title:String?="",
     var price:Long?=0,
     var unit:String?="",
-    var rawMaterials:Double?=0.0,
-    var salary:Double?=0.0,
-    var socialNeeds:Double?=0.0,
-    var depreciation:Double?=0.0,
-    var taxes:Double?=0.0,
-    var storage:Double?=0.0,
-    var other:Double?=0.0,
+    var rawMaterials:Int?=0,
+    var salary:Int?=0,
+    var socialNeeds:Int?=0,
+    var depreciation:Int?=0,
+    var taxes:Int?=0,
+    var storage:Int?=0,
+    var other:Int?=0,
     val dateRegistration:String?=""
 )
 @IgnoreExtraProperties
