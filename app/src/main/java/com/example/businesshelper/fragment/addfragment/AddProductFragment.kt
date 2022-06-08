@@ -31,7 +31,7 @@ class AddProductFragment:Fragment(R.layout.fragment_add_product){
 
         bind.addNewItem.setOnClickListener {
             try {
-                val id= database.key
+                val id= database.push().key
                 val title = bind.root.findViewById<EditText>(R.id.title_product).text.toString()
                 val price = bind.root.findViewById<EditText>(R.id.price_product).text.toString().toLong()
                 val unit = bind.root.findViewById<EditText>(R.id.unit_product).text.toString()

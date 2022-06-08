@@ -43,16 +43,16 @@ data class Counterparty(
 @IgnoreExtraProperties
 data class Product(
     val id: String?="",
-    val title:String?="",
-    val price:Long?=0,
-    val unit:String?="",
-    val rawMaterials:Double?=0.0,
-    val salary:Double?=0.0,
-    val socialNeeds:Double?=0.0,
-    val depreciation:Double?=0.0,
-    val taxes:Double?=0.0,
-    val storage:Double?=0.0,
-    val other:Double?=0.0,
+    var title:String?="",
+    var price:Long?=0,
+    var unit:String?="",
+    var rawMaterials:Double?=0.0,
+    var salary:Double?=0.0,
+    var socialNeeds:Double?=0.0,
+    var depreciation:Double?=0.0,
+    var taxes:Double?=0.0,
+    var storage:Double?=0.0,
+    var other:Double?=0.0,
     val dateRegistration:String?=""
 )
 @IgnoreExtraProperties
