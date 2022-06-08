@@ -70,5 +70,6 @@
     
     <style name="editArticle_style" parent="Widget.AppCompat.EditText">
         <item name="android:textColorHint">@color/textHintColor_edit</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>

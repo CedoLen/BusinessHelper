@@ -1,6 +1,7 @@
 package com.example.businesshelper.fragment
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -30,7 +31,7 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
     private lateinit var counterList: ArrayList<Counterparty>
     private lateinit var bind: FragmentCounterpartiesBinding
     private var addFragment: AddCounterpartiesFragment = AddCounterpartiesFragment()
-    private var editFragment:EditCounterpartyFragment = EditCounterpartyFragment()
+    private lateinit var editFragment:EditCounterpartyFragment
     private lateinit var recyclerView:RecyclerView
 
     override fun onCreateView(
@@ -77,6 +78,7 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
     }
 
     override fun onClickCounterListener(data: Counterparty) {
+        editFragment = EditCounterpartyFragment(data)
         fragmentManager?.beginTransaction()?.apply {
             replace(R.id.flFragment,editFragment,EditCounterpartyFragment::class.java.simpleName)
                 .addToBackStack(null)

@@ -5,19 +5,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.recyclerview.widget.RecyclerView
 import com.example.businesshelper.R
+import com.example.businesshelper.data.Counterparty
+import com.example.businesshelper.databinding.FragmentCounterpartiesBinding
+import com.example.businesshelper.databinding.FragmentEditCounterpartyBinding
+import com.example.businesshelper.fragment.addfragment.AddCounterpartiesFragment
+import com.google.firebase.database.DatabaseReference
+import java.util.ArrayList
 
 
-class EditCounterpartyFragment : Fragment() {
+class EditCounterpartyFragment(val data:Counterparty) : Fragment(R.layout.fragment_edit_counterparty) {
+
+    private lateinit var database: DatabaseReference
+    private lateinit var bind: FragmentEditCounterpartyBinding
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_counterparty, container, false)
-    }
+        bind = FragmentEditCounterpartyBinding.inflate(layoutInflater)
 
+        bind.stData = data
+
+        return bind.root
+    }
 
 }

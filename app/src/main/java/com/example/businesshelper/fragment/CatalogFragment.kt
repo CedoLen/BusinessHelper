@@ -25,7 +25,7 @@ class CatalogFragment:Fragment(R.layout.fragment_catalog), catalogAdapter.CellCl
     private lateinit var database: DatabaseReference
     private lateinit var productList: ArrayList<Product>
     private lateinit var bind:FragmentCatalogBinding
-    private var editFragment:EditProductFragment = EditProductFragment()
+    private lateinit var editFragment:EditProductFragment
     private var addFragment:AddProductFragment= AddProductFragment()
     private lateinit var recyclerView:RecyclerView
     override fun onCreateView(
@@ -70,6 +70,7 @@ class CatalogFragment:Fragment(R.layout.fragment_catalog), catalogAdapter.CellCl
     }
 
     override fun onClickProductListener(data: Product) {
+        editFragment = EditProductFragment(data)
         fragmentManager?.beginTransaction()?.apply {
             replace(R.id.flFragment,editFragment, EditProductFragment::class.java.simpleName)
                 .addToBackStack(null)
