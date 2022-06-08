@@ -29,7 +29,7 @@ class AddCounterpartiesFragment:Fragment(R.layout.fragment_add_counterparties) {
 
         bind.addNewItem.setOnClickListener {
             try {
-                val id=database.key
+                val id=database.push().key
                 val email = bind.root.findViewById<EditText>(R.id.email_counterparty).text.toString()
                 val company = bind.root.findViewById<EditText>(R.id.name_counterparty).text.toString()
                 val phone = bind.root.findViewById<EditText>(R.id.phone_counterparty).text.toString()

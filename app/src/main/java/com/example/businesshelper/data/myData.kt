@@ -31,14 +31,14 @@ data class Order(
 )
 @IgnoreExtraProperties
 data class Counterparty(
-    val id:String?="",
-    val email: String?="",
-    val company:String?="",
-    val phone:String?="",
-    val inn:String?="",
-    val kpp:String?="",
-    val legalAddress:String?="",
-    val actualAddress:String?=""
+    var id:String?="",
+    var email: String?="",
+    var company:String?="",
+    var phone:String?="",
+    var inn:String?="",
+    var kpp:String?="",
+    var legalAddress:String?="",
+    var actualAddress:String?=""
 )
 @IgnoreExtraProperties
 data class Product(
