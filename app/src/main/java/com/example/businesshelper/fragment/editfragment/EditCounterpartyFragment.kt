@@ -42,7 +42,10 @@ class EditCounterpartyFragment(var data:Counterparty) : Fragment(R.layout.fragme
 
 
         bind.removeCounterItem.setOnClickListener{
+
+
             database.child(data.id.toString()).removeValue()
+            fragmentManager?.popBackStackImmediate()
         }
         bind.editCounterItem.setOnClickListener{
             data.kpp =kpp.text.toString()
@@ -54,6 +57,7 @@ class EditCounterpartyFragment(var data:Counterparty) : Fragment(R.layout.fragme
             data.actualAddress=actualAd.text.toString()
 
             database.child(data.id.toString()).setValue(data)
+            fragmentManager?.popBackStackImmediate()
         }
         return bind.root
     }

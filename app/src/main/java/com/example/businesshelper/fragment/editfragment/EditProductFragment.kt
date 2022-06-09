@@ -41,6 +41,7 @@ class EditProductFragment(val data:Product) : Fragment(R.layout.fragment_edit_pr
 
         bind.removeProductItem.setOnClickListener{
             database.child(data.id.toString()).removeValue()
+            fragmentManager?.popBackStackImmediate()
         }
         bind.editProductItem.setOnClickListener{
             data.title = title.text.toString()
@@ -55,6 +56,7 @@ class EditProductFragment(val data:Product) : Fragment(R.layout.fragment_edit_pr
             data.other=other.text.toString().toInt()
 
             database.child(data.id.toString()).setValue(data)
+            fragmentManager?.popBackStackImmediate()
         }
 
         return bind.root

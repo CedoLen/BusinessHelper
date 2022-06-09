@@ -49,7 +49,8 @@ class AddCounterpartiesFragment:Fragment(R.layout.fragment_add_counterparties) {
                     actualAd
                 )
                 database.push().setValue(human)
-                Toast.makeText(bind.root.context,"Объект добавлен", Toast.LENGTH_LONG).show()
+
+                fragmentManager?.popBackStackImmediate()
             }
             catch (e:Exception)
             {
