@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Страница находится в разработке.\nСпасибо за понимание."
+        android:text="У вас пока нет заказов"
         android:textAlignment="center"
         android:textSize="18dp"
         android:textColor="@color/black"
