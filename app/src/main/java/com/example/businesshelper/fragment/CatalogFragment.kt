@@ -3,10 +3,9 @@ package com.example.businesshelper.fragment
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.businesshelper.R
 import com.example.businesshelper.data.Counterparty
@@ -66,7 +65,7 @@ class CatalogFragment:Fragment(R.layout.fragment_catalog), catalogAdapter.CellCl
                 Log.w(ContentValues.TAG, "loadPost:onCancelled", error.toException())
             }
         })
-
+        setHasOptionsMenu(true)
         return bind.root
     }
 
@@ -77,5 +76,36 @@ class CatalogFragment:Fragment(R.layout.fragment_catalog), catalogAdapter.CellCl
                 .addToBackStack(null)
                 .commit()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.top_menu, menu)
+
+        val search = menu.findItem(R.id.action_search)
+        val searchView = search.actionView as SearchView
+        searchView.queryHint = "Search"
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                productList.filter { item->item.title!!.contains(newText.toString()) }
+                recyclerView.adapter = catalogAdapter(requireContext(),productList, this@CatalogFragment )
+                return true
+            }
+        })
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId)
+        {
+            R.id.action_sort->{
+
+            }
+        }
+        return true
     }
 }

@@ -1,21 +1,17 @@
 package com.example.businesshelper.fragment
 
 import android.content.ContentValues
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.businesshelper.fragment.addfragment.AddCounterpartiesFragment
 import com.example.businesshelper.R
 import com.example.businesshelper.data.Counterparty
-import com.example.businesshelper.data.Status
 import com.example.businesshelper.data.adepters.counterpartiesAdapter
 import com.example.businesshelper.databinding.FragmentCounterpartiesBinding
-import com.example.businesshelper.fragment.addfragment.AddProductFragment
 import com.example.businesshelper.fragment.editfragment.EditCounterpartyFragment
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
@@ -29,6 +25,7 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
 
     private lateinit var database: DatabaseReference
     private lateinit var counterList: ArrayList<Counterparty>
+    private lateinit var displayList: ArrayList<Counterparty>
     private lateinit var bind: FragmentCounterpartiesBinding
     private var addFragment: AddCounterpartiesFragment = AddCounterpartiesFragment()
     private lateinit var editFragment:EditCounterpartyFragment
@@ -47,7 +44,6 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
                     .commit()
             }
         }
-
 
         database = FirebaseDatabase.getInstance().getReference("counterparties")
 
@@ -74,9 +70,9 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
             }
 
         })
-
     return bind.root
     }
+
 
     override fun onClickCounterListener(data: Counterparty) {
         editFragment = EditCounterpartyFragment(data)
@@ -85,5 +81,48 @@ class CounterpartiesFragment:Fragment(R.layout.fragment_counterparties),
                 .addToBackStack(null)
                 .commit()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.top_menu, menu)
+
+        val search = menu.findItem(R.id.action_search)
+        val searchView = search.actionView as SearchView
+        searchView.queryHint = "Search"
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText!!.isNotEmpty()) {
+                    displayList.clear()
+                    for (item in counterList) {
+                        if (item.company!!.contains(newText.toString()))
+                            displayList.add(item)
+
+                        recyclerView.adapter!!.notifyDataSetChanged()
+                    }
+
+                } else {
+                    displayList.clear()
+                    displayList.addAll(counterList)
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                }
+
+                return true
+            }
+            })
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId)
+        {
+            R.id.action_sort->{
+
+            }
+        }
+        return true
     }
 }

@@ -18,7 +18,7 @@
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_add_product.xml" value="0.264" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_basket.xml" value="0.152" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_catalog.xml" value="0.264" />
-        <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_counterparties.xml" value="0.264" />
+        <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_counterparties.xml" value="0.2" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_edit_counterparty.xml" value="0.16" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_edit_product.xml" value="0.1" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_finance.xml" value="0.2164855072463768" />
@@ -27,6 +27,7 @@
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_tasks.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/product_card.xml" value="0.264" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />
+        <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/menu/top_menu.xml" value="0.22573749465583584" />
       </map>
     </option>
   </component>

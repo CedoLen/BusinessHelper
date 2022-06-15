@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         val orderFragment = OrderFragment()
         val basketFragment = BasketFragment()
         val counterpartiesFragment = CounterpartiesFragment()
-        val addCounterpartiesFragment = AddCounterpartiesFragment()
 
         setCurrentFragment(catalogFragment)
 
