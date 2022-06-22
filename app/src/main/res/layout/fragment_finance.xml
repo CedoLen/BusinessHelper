@@ -6,14 +6,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.FinanceFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/finance"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <GridLayout
+            android:columnCount="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Валюта"
+                android:gravity="fill"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Курс ЦБ РФ"
+                android:gravity="fill"/>
+        </GridLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rV_Currency"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        tools:listitem="@layout/currency_card"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

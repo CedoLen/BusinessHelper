@@ -20,4 +20,9 @@
         android:id="@+id/people"
         android:title="@string/counterparties"
         android:icon="@drawable/ic_people"/>
+
+    <item
+        android:id="@+id/finance"
+        android:title="@string/finance"
+        android:icon="@drawable/ic_finance"/>
 </menu>
