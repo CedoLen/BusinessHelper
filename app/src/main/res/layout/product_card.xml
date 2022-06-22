@@ -54,9 +54,14 @@
             </LinearLayout>
         </LinearLayout>
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/ellipsis_button_product"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_ellipsis"/>
+            android:background="@color/white"
+            android:src="@drawable/ic_ellipsis"
+            tools:ignore="SpeakableTextPresentCheck" />
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

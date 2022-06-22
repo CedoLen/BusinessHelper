@@ -1,18 +1,22 @@
 package com.example.businesshelper.fragment.editfragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 import com.example.businesshelper.R
+import com.example.businesshelper.data.Order
 import com.example.businesshelper.data.Product
 import com.example.businesshelper.databinding.FragmentEditCounterpartyBinding
 import com.example.businesshelper.databinding.FragmentEditProductBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.util.*
+import kotlin.math.log
 
 
 class EditProductFragment(val data:Product) : Fragment(R.layout.fragment_edit_product) {
@@ -40,8 +44,16 @@ class EditProductFragment(val data:Product) : Fragment(R.layout.fragment_edit_pr
         val other = bind.root.findViewById<EditText>(R.id.other_product_edit)
 
         bind.removeProductItem.setOnClickListener{
-            database.child(data.id.toString()).removeValue()
-            fragmentManager?.popBackStackImmediate()
+            val builder = AlertDialog.Builder(bind.root.context)
+            builder.setTitle("Удаление элемента")
+                .setMessage("Удалить товар: ${data.title}?")
+                .setCancelable(true)
+                .setPositiveButton("Да") { dialog, id ->
+                    database.child(data.id.toString()).removeValue()
+                    fragmentManager?.popBackStackImmediate()
+                }
+                .setNegativeButton("Нет"){ dialog, id -> }
+            builder.show()
         }
         bind.editProductItem.setOnClickListener{
             data.title = title.text.toString()
@@ -57,6 +69,12 @@ class EditProductFragment(val data:Product) : Fragment(R.layout.fragment_edit_pr
 
             database.child(data.id.toString()).setValue(data)
             fragmentManager?.popBackStackImmediate()
+        }
+
+        bind.inBasketClickItem.setOnClickListener{
+            val db = FirebaseDatabase.getInstance().getReference("basket")
+            db.push().setValue(data)
+            Toast.makeText(bind.root.context,"Продукт добавлен.",Toast.LENGTH_SHORT).show()
         }
 
         return bind.root

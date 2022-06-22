@@ -1,13 +1,24 @@
 package com.example.businesshelper.data
 
-import com.google.firebase.database.Exclude
 import com.google.firebase.database.IgnoreExtraProperties
-import java.util.ArrayList
 
 @IgnoreExtraProperties
 data class Status(
-    var title:String?=""
+    val id: String?="",
+    val title:String?=""
 )
+@IgnoreExtraProperties
+data class TypeInCome(
+    val id: String?="",
+    val title:String?=""
+)
+@IgnoreExtraProperties
+data class TypeExpenses(
+    val id: String?="",
+    val title:String?=""
+)
+
+
 @IgnoreExtraProperties
 data class Account(
     val id:String?="",
@@ -23,11 +34,14 @@ data class Account(
 )
 @IgnoreExtraProperties
 data class Order(
+    val id: String?="",
+    val status: String?="st1",
     val dateRegistration:String?="",
     val dateIssue:String?="",
     val deliveryAddress:String?="",
     val priceDelivery:Long?=0,
-    val totalPrice:Long?=0
+    val totalPrice:Long?=0,
+    val basket:HashMap<String,Product>?=null
 )
 @IgnoreExtraProperties
 data class Counterparty(
@@ -61,3 +75,4 @@ val products:List<Product>?=null,
 val orders:List<Order>?=null,
 val count:Long?=0
 )
+

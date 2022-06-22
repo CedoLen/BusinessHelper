@@ -1,11 +1,13 @@
 package com.example.businesshelper.fragment.editfragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.businesshelper.R
 import com.example.businesshelper.data.Counterparty
@@ -42,10 +44,16 @@ class EditCounterpartyFragment(var data:Counterparty) : Fragment(R.layout.fragme
 
 
         bind.removeCounterItem.setOnClickListener{
-
-
-            database.child(data.id.toString()).removeValue()
-            fragmentManager?.popBackStackImmediate()
+            val builder = AlertDialog.Builder(bind.root.context)
+            builder.setTitle("Удаление элемента")
+                .setMessage("Удалить контрагента: ${data.company}?")
+                .setCancelable(true)
+                .setPositiveButton("Да") { dialog, id ->
+                    database.child(data.id.toString()).removeValue()
+                    fragmentManager?.popBackStackImmediate()
+                }
+                .setNegativeButton("Нет"){ dialog, id -> }
+            builder.show()
         }
         bind.editCounterItem.setOnClickListener{
             data.kpp =kpp.text.toString()
