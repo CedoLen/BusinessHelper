@@ -15,4 +15,5 @@
     <color name="textColor_edit">#172B4D</color>
     <color name="red">#D20000</color>
     <color name="light_blue">#C5EDFF</color>
+    <color name="color_for_date">#367DE8</color>
 </resources>

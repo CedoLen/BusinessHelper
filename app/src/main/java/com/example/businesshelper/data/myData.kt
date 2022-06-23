@@ -34,15 +34,22 @@ data class Account(
 )
 @IgnoreExtraProperties
 data class Order(
-    val id: String?="",
-    val status: String?="st1",
-    val dateRegistration:String?="",
-    val dateIssue:String?="",
-    val deliveryAddress:String?="",
-    val priceDelivery:Long?=0,
-    val totalPrice:Long?=0,
-    val basket:HashMap<String,Product>?=null
+    var id: String?="",
+    var status: String?="",
+    var dateRegistration:String?="",
+    var dateIssue:String?="",
+    var deliveryAddress:String?="",
+    var priceDelivery:Long?=0,
+    var totalPrice:Long?=0,
+    var counterCompany: String?="",
+    var counterparty: Counterparty?=null,
+    var basket:HashMap<String,CountProducts>?=null
 )
+data class CountProducts(
+    var product: Product?=null,
+    var count:Int?=0
+)
+
 @IgnoreExtraProperties
 data class Counterparty(
     var id:String?="",
@@ -69,10 +76,5 @@ data class Product(
     var other:Int?=0,
     val dateRegistration:String?=""
 )
-@IgnoreExtraProperties
-data class ProductOrder(
-val products:List<Product>?=null,
-val orders:List<Order>?=null,
-val count:Long?=0
-)
+
 

@@ -4,9 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.businesshelper.R
@@ -49,4 +47,5 @@ class counterpartiesAdapter(val context: Context, val list: ArrayList<Counterpar
     interface CellClickListener {
         fun onClickCounterListener(data: Counterparty)
     }
+
 }
