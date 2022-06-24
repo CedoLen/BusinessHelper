@@ -7,6 +7,15 @@
     android:background="@color/white"
     tools:context=".addActivity.MinusExpenseActivity">
 
+    <Toolbar
+        android:id="@+id/toolbar2"
+        style="@style/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,7 +25,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <TextView
             style="@style/textViewBlack"
@@ -102,20 +111,20 @@
         </LinearLayout>
 
         <TextView
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="1dp"
             style="@style/textViewBlack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Сумма"/>
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="1dp"
+            android:text="Сумма" />
 
         <EditText
             android:id="@+id/edTx_sum_minus_expense"
-            android:hint="Сумма"
+            style="@style/edittext_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/edittext_style"
-            android:inputType="number"/>
+            android:hint="Сумма"
+            android:inputType="number" />
 
     </LinearLayout>
 

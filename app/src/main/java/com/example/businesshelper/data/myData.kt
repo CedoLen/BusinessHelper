@@ -16,15 +16,14 @@ data class TypeInCome(
 data class TypeExpenses(
     val id: String?="",
     val title:String?=""
-
 )
+
 @IgnoreExtraProperties
 data class Expenses(
     var type:String?="",
     var date:String?="",
     var sum:Int?=0
 )
-
 
 @IgnoreExtraProperties
 data class Account(

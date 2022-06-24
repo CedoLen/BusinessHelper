@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.businesshelper.R
 import com.example.businesshelper.addActivity.AddOrderActivity
 import com.example.businesshelper.addActivity.MinusExpenseActivity
+import com.example.businesshelper.addActivity.PlusExpenseActivity
 import com.example.businesshelper.data.api.Currencies
 import com.example.businesshelper.data.api.InterfaceCurrency
 import com.example.businesshelper.data.api.RetrofitCurrency
@@ -60,7 +61,8 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
 
         }
         bind.btPlusExpense.setOnClickListener {
-
+            val intent = Intent(bind.root.context, PlusExpenseActivity::class.java)
+            startActivity(intent)
         }
         bind.btMinusExpense.setOnClickListener {
             val intent = Intent(bind.root.context, MinusExpenseActivity::class.java)

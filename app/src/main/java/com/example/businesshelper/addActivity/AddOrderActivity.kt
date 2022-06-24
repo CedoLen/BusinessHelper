@@ -1,5 +1,6 @@
 package com.example.businesshelper.addActivity
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.ContentValues
@@ -43,6 +44,7 @@ class AddOrderActivity : AppCompatActivity(), basketAdapter.CellClickListener, c
     private lateinit var counter:Counterparty
     private lateinit var company:String
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_order)
@@ -72,7 +74,7 @@ class AddOrderActivity : AppCompatActivity(), basketAdapter.CellClickListener, c
             val day = cal.get(Calendar.DAY_OF_MONTH)
 
             val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, myear, mmonth, mdayOfMonth ->
-                finishDate.setText(""+ mdayOfMonth +"."+ mmonth +"."+ myear)
+                finishDate.setText("${mdayOfMonth}.${mmonth+1}.${myear}")
             }, year, month, day)
             datePickerDialog.show()
         }
