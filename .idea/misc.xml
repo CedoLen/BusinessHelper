@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/drawable/ic_finance.xml" value="0.2795" />
+        <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/drawable/ic_order.xml" value="0.2795" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/drawable/ic_plus.xml" value="0.2525" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/drawable/main_button_shape.xml" value="0.2795" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/drawable/main_outline_shape.xml" value="0.1525" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_order.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/fragment_tasks.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/itembasket_card.xml" value="0.4" />
+        <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/order_card.xml" value="0.22573749465583584" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/layout/product_card.xml" value="0.6649659863945578" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />
         <entry key="..\:/Users/Lena/AndroidStudioProjects/BusinessHelper/app/src/main/res/menu/top_menu.xml" value="0.22573749465583584" />

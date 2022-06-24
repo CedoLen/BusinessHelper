@@ -43,7 +43,7 @@ data class Order(
     var totalPrice:Long?=0,
     var counterCompany: String?="",
     var counterparty: Counterparty?=null,
-    var basket:HashMap<String,CountProducts>?=null
+    var basket:Map<String,CountProducts>?=null
 )
 data class CountProducts(
     var product: Product?=null,

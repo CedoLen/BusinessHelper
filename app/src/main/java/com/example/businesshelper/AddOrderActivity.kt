@@ -106,6 +106,7 @@ class AddOrderActivity : AppCompatActivity(), basketAdapter.CellClickListener, c
                 val order = Order(id,status, dateRegistration,dateIssue,deliveryAddress,priceDelivery,totalPrice,company,counter,basket)
 
                 database.child("orders").push().setValue(order)
+                database.child("basket").removeValue()
                 this.onBackPressed()
             }
             catch(e:Exception) {
@@ -114,6 +115,7 @@ class AddOrderActivity : AppCompatActivity(), basketAdapter.CellClickListener, c
         }
     }
 
+    
     fun setCountProducts()
     {
         if(productList.isNotEmpty()){

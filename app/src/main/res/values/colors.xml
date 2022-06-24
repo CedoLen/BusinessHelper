@@ -16,4 +16,6 @@
     <color name="red">#D20000</color>
     <color name="light_blue">#C5EDFF</color>
     <color name="color_for_date">#367DE8</color>
+
+    <color name="st1">#E4B50F</color>
 </resources>
