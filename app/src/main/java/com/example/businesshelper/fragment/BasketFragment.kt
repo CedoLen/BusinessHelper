@@ -2,7 +2,6 @@ package com.example.businesshelper.fragment
 
 import android.app.AlertDialog
 import android.content.ContentValues
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,23 +9,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.businesshelper.*
 import com.example.businesshelper.R
+import com.example.businesshelper.addActivity.AddOrderActivity
 import com.example.businesshelper.data.*
 import com.example.businesshelper.data.adepters.basketAdapter
-import com.example.businesshelper.data.adepters.catalogAdapter
 import com.example.businesshelper.databinding.FragmentBasketBinding
-import com.example.businesshelper.databinding.FragmentCatalogBinding
-import com.example.businesshelper.fragment.addfragment.AddProductFragment
-import com.example.businesshelper.fragment.editfragment.EditProductFragment
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.Firebase
-import retrofit2.Call
-import retrofit2.Response
 import java.util.ArrayList
 
 class BasketFragment:Fragment(R.layout.fragment_basket), basketAdapter.CellClickListener {

@@ -1,8 +1,7 @@
-package com.example.businesshelper
+package com.example.businesshelper.addActivity
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.app.DatePickerDialog.OnDateSetListener
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
@@ -11,19 +10,18 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
+import com.example.businesshelper.R
 import com.example.businesshelper.data.CountProducts
 import com.example.businesshelper.data.Counterparty
 import com.example.businesshelper.data.Order
 import com.example.businesshelper.data.Product
 import com.example.businesshelper.data.adepters.basketAdapter
 import com.example.businesshelper.data.adepters.counterpartiesAdapter
-import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
-import kotlin.properties.Delegates
 
 
 class AddOrderActivity : AppCompatActivity(), basketAdapter.CellClickListener, counterpartiesAdapter.CellClickListener {

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".addActivity.MinusExpenseActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/textViewBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статьи" />
+
+        <LinearLayout
+            android:id="@+id/list_minus_articles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/ch_te1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te1"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te2"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te3"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te4"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te5"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te6"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te7"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te8"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te9"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/ch_te10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/te10"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="1dp"
+            style="@style/textViewBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сумма"/>
+
+        <EditText
+            android:id="@+id/edTx_sum_minus_expense"
+            android:hint="Сумма"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/edittext_style"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/flbt_minus_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        style="@style/floatingButtonSave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

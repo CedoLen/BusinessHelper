@@ -55,7 +55,7 @@
         tools:layout="@layout/fragment_add_product" />
     <activity
         android:id="@+id/addOrderActivity"
-        android:name="com.example.businesshelper.AddOrderActivity"
+        android:name="com.example.businesshelper.addActivity.AddOrderActivity"
         android:label="activity_add_order"
         tools:layout="@layout/activity_add_order" />
 </navigation>
