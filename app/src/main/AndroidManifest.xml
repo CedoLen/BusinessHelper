@@ -16,9 +16,17 @@
         android:theme="@style/Theme.BusinessHelper"
         tools:targetApi="31">
         <activity
-            android:name=".addActivity.PlusExpenseActivity"
+            android:name=".addActivity.PlusInComeActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".addActivity.MinusInComeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".addActivity.PlusExpenseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".addActivity.MinusExpenseActivity"
             android:exported="false"
