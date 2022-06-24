@@ -23,4 +23,23 @@
     <string name="article6">Хранение</string>
     <string name="article7">Прочее</string>
 
+    <array name="typeincome">
+        <item>Внереализационные операции</item>
+        <item>Кредиты и займы</item>
+        <item>Выручка</item>
+        <item>Другое</item>
+    </array>
+    <array name="typeexpense">
+        <item>Аренда</item>
+        <item>Амортизация</item>
+        <item>Брак</item>
+        <item>Заработная плата</item>
+        <item>Социальные нужды</item>
+        <item>Закупка сырья и материалов</item>
+        <item>Транспортировка</item>
+        <item>Налоги и сборы</item>
+        <item>Маркетинг и реклама</item>
+        <item>Прочие расходы</item>
+    </array>
+
 </resources>

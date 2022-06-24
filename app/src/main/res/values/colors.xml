@@ -17,5 +17,8 @@
     <color name="light_blue">#C5EDFF</color>
     <color name="color_for_date">#367DE8</color>
 
+    <color name="backgr_income">#11BD4B</color>
+    <color name="backgr_expense">#F96363</color>
+
     <color name="st1">#E4B50F</color>
 </resources>

@@ -127,7 +127,10 @@ class AddOrderActivity : AppCompatActivity(), basketAdapter.CellClickListener, c
                 {
                     for (item2 in countProducts){
                         if(item2.product==temp.product)
-                            item2.count!!.plus(1)
+                        {
+                            item2.count = item2.count!!.plus(1)
+                        }
+
                     }
                 }
                 else
@@ -142,10 +145,10 @@ class AddOrderActivity : AppCompatActivity(), basketAdapter.CellClickListener, c
         {
             basket= HashMap(countProducts.size)
             basket.clear()
-            val totalPrise:Long = 0
+            var totalPrise:Long = 0
             for (i in 0..countProducts.size.minus(1))
             {
-                totalPrise.plus((countProducts[i].product!!.price)!!*(countProducts[i].count!!))
+                totalPrise = totalPrise.plus((countProducts[i].product!!.price)!!*(countProducts[i].count!!))
                 basket.put(i.toString(),countProducts[i])
             }
             return totalPrise

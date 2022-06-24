@@ -8,12 +8,13 @@
 
 
     <TableLayout
-        android:background="@color/main_background"
-        android:padding="5dp"
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
         android:layout_marginTop="16dp"
+        android:background="@color/main_background"
+        android:padding="5dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,23 +23,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
-            android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="fill"
-                android:textSize="14dp"
-                android:text="Валюта" />
+                android:text="Валюта"
+                android:textSize="14dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="fill"
-                android:textSize="14dp"
-                android:text="Курс ЦБ РФ" />
+                android:text="Курс ЦБ РФ"
+                android:textSize="14dp" />
         </TableRow>
 
         <TableRow
@@ -49,16 +50,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="fill"
-                android:textSize="14dp"
-                android:text="USD" />
+                android:text="USD"
+                android:textSize="14dp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="fill"
                 android:id="@+id/output_USD_Currency"
-                android:textSize="14dp"
-                android:text="-" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="fill"
+                android:text="-"
+                android:textSize="14dp" />
         </TableRow>
 
         <TableRow
@@ -69,17 +70,113 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="fill"
-                android:textSize="14dp"
-                android:text="EUR" />
+                android:text="EUR"
+                android:textSize="14dp" />
 
             <TextView
+                android:id="@+id/output_EUR_Currency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="fill"
-                android:id="@+id/output_EUR_Currency"
-                android:textSize="14dp"
-                android:text="-" />
+                android:text="-"
+                android:textSize="14dp" />
         </TableRow>
     </TableLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@color/backgr_income"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageButton
+                    style="@style/buttonMinus"
+                    android:id="@+id/bt_minus_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Доходы"
+                    style="@style/textViewWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/bt_plus_income"
+                    app:layout_constraintStart_toEndOf="@+id/bt_minus_income"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    style="@style/buttonPlus"
+                    android:id="@+id/bt_plus_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="10dp"
+                android:background="@color/backgr_expense"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageButton
+                    style="@style/buttonMinus"
+                    android:id="@+id/bt_minus_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Расходы"
+                    style="@style/textViewWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/bt_minus_expense"
+                    app:layout_constraintStart_toEndOf="@+id/bt_plus_expense"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    style="@style/buttonPlus"
+                    android:id="@+id/bt_plus_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

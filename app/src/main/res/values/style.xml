@@ -17,6 +17,10 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="textViewWhite" parent="styleTextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="edittext_style" parent="Widget.AppCompat.EditText">
         <item name="android:width">350dp</item>
         <item name="android:textSize">14dp</item>
@@ -53,6 +57,17 @@
     <style name="floatingButtonRemove" parent="Widget.Design.FloatingActionButton">
         <item name="backgroundTint">@color/red</item>
         <item name="android:src">@drawable/ic_trash</item>
+    </style>
+
+    <style name="buttonPlus">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:src">@drawable/ic_plus</item>
+    </style>
+    <style name="buttonMinus">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:src">@drawable/ic_minus</item>
     </style>
 
     <style name="header" parent="Widget.AppCompat.TextView">
