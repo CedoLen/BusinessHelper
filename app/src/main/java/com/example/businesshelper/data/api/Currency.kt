@@ -1,4 +1,19 @@
 package com.example.businesshelper.data.api
 
-data class Currency(val ID:String, val NumCode:String, val CharCode:String, val Nominal:Int, val Name:String, val Value:Double, val Previous:Double)
-data class Currencies(val success:Boolean, val data:List<Currency>)
+data class Valute(
+    var ID:String?="",
+    var NumCode:String?="",
+    var CharCode:String?="",
+    var Nominal:Int?=0,
+    var Name:String?="",
+    var Value:String?="",
+    var Previous:String?=""
+    )
+
+data class Currencies(
+    var Date:String?="",
+    var PreviousDate:String?="",
+    var PreviousURL:String?="",
+    var Timestamp:String?="",
+    var Valutes:Map<String,Valute>
+)

@@ -29,9 +29,6 @@
         android:name="com.example.businesshelper.fragment.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" >
-        <action
-            android:id="@+id/action_orderFragment_to_addOrderFragment"
-            app:destination="@id/addOrderFragment" />
     </fragment>
     <fragment
         android:id="@+id/catalogFragment"
@@ -46,15 +43,19 @@
         android:id="@+id/basketFragment"
         android:name="com.example.businesshelper.fragment.BasketFragment"
         android:label="fragment_basket"
-        tools:layout="@layout/fragment_basket" />
-    <fragment
-        android:id="@+id/addOrderFragment"
-        android:name="com.example.businesshelper.fragment.addfragment.AddOrderFragment"
-        android:label="fragment_add_order"
-        tools:layout="@layout/fragment_add_order" />
+        tools:layout="@layout/fragment_basket" >
+        <action
+            android:id="@+id/action_basketFragment_to_addOrderActivity"
+            app:destination="@id/addOrderActivity" />
+    </fragment>
     <fragment
         android:id="@+id/addProductFragment"
         android:name="com.example.businesshelper.fragment.addfragment.AddProductFragment"
         android:label="fragment_add_product"
         tools:layout="@layout/fragment_add_product" />
+    <activity
+        android:id="@+id/addOrderActivity"
+        android:name="com.example.businesshelper.AddOrderActivity"
+        android:label="activity_add_order"
+        tools:layout="@layout/activity_add_order" />
 </navigation>

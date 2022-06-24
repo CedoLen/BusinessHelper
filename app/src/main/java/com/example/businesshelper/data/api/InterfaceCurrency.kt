@@ -2,9 +2,8 @@ package com.example.businesshelper.data.api
 
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface InterfaceCurrency {
-    @GET("Valute")
+    @GET("daily_json.js")
     fun getCurrency(): Call<Currencies>
 }

@@ -6,31 +6,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.FinanceFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
+
+    <TableLayout
+        android:background="@color/main_background"
+        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <GridLayout
-            android:columnCount="2"
-            android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Валюта"
-                android:gravity="fill"/>
+                android:gravity="fill"
+                android:textSize="14dp"
+                android:text="Валюта" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Курс ЦБ РФ"
-                android:gravity="fill"/>
-        </GridLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rV_Currency"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        tools:listitem="@layout/currency_card"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-    </LinearLayout>
+                android:gravity="fill"
+                android:textSize="14dp"
+                android:text="Курс ЦБ РФ" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="fill"
+                android:textSize="14dp"
+                android:text="USD" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="fill"
+                android:id="@+id/output_USD_Currency"
+                android:textSize="14dp"
+                android:text="-" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="fill"
+                android:textSize="14dp"
+                android:text="EUR" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="fill"
+                android:id="@+id/output_EUR_Currency"
+                android:textSize="14dp"
+                android:text="-" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.businesshelper.R
 import com.example.businesshelper.databinding.FragmentOrderBinding
-import com.example.businesshelper.fragment.addfragment.AddOrderFragment
 
 class OrderFragment:Fragment(R.layout.fragment_order) {
     override fun onCreateView(

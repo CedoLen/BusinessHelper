@@ -8,14 +8,10 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.businesshelper.R
-import com.example.businesshelper.data.Counterparty
 import com.example.businesshelper.data.Product
 import com.example.businesshelper.data.adepters.catalogAdapter
-import com.example.businesshelper.data.adepters.counterpartiesAdapter
 import com.example.businesshelper.databinding.FragmentCatalogBinding
-import com.example.businesshelper.fragment.addfragment.AddOrderFragment
 import com.example.businesshelper.fragment.addfragment.AddProductFragment
-import com.example.businesshelper.fragment.editfragment.EditCounterpartyFragment
 import com.example.businesshelper.fragment.editfragment.EditProductFragment
 import com.google.firebase.database.*
 import java.util.ArrayList

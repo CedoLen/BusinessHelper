@@ -6,12 +6,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class RetrofitCurrency {
-    var gson = GsonBuilder()
-        .setLenient()
-        .create()
 
     fun getRetrofit()= Retrofit.Builder()
-        .baseUrl("https://www.cbr-xml-daily.ru/daily_json.js/")
-        .addConverterFactory(GsonConverterFactory.create(gson))
+        .baseUrl("https://www.cbr-xml-daily.ru/")
+        .addConverterFactory(GsonConverterFactory.create())
         .build()
 }
