@@ -76,7 +76,7 @@ class PlusExpenseActivity : AppCompatActivity() {
                 if(v.isChecked){
                     val exp = Expenses(
                         date = edDate.text.toString(),
-                        sum = edSum.text.toString().toInt(),
+                        sum = edSum.text.toString().toLong(),
                         type = "te${i+1}"
                     )
                     list.add(exp)

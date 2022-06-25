@@ -18,18 +18,25 @@ data class TypeExpenses(
     val title:String?=""
 )
 
+data class fullFinance(
+    var title: String?="",
+    var type:String?="",
+    var futureSum:Long=0,
+    var currentSum:Long=0
+)
+
 @IgnoreExtraProperties
 data class Expenses(
     var type:String?="",
     var date:String?="",
-    var sum:Int?=0
+    var sum:Long=0
 )
 
 @IgnoreExtraProperties
 data class InCome(
     var type:String?="",
     var date:String?="",
-    var sum:Int?=0
+    var sum:Long=0
 )
 
 @IgnoreExtraProperties

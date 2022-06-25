@@ -63,7 +63,7 @@ class MinusInComeActivity : AppCompatActivity() {
                 if(v.isChecked){
                     val exp = InCome(
                         date = sdf.format(Date()),
-                        sum = edSum.text.toString().toInt(),
+                        sum = edSum.text.toString().toLong(),
                         type = "tic${i+1}"
                     )
                     list.add(exp)

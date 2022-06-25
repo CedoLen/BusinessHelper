@@ -74,7 +74,7 @@ class PlusInComeActivity : AppCompatActivity() {
                 if(v.isChecked){
                     val exp = InCome(
                         date = edDate.text.toString(),
-                        sum = edSum.text.toString().toInt(),
+                        sum = edSum.text.toString().toLong(),
                         type = "tic${i+1}"
                     )
                     list.add(exp)

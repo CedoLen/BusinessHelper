@@ -62,7 +62,7 @@ class MinusExpenseActivity : AppCompatActivity() {
                 if(v.isChecked){
                     val exp = Expenses(
                         date = sdf.format(Date()),
-                        sum = edSum.text.toString().toInt(),
+                        sum = edSum.text.toString().toLong(),
                         type = "te${i+1}"
                     )
                     list.add(exp)
