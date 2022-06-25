@@ -17,7 +17,6 @@ import com.example.businesshelper.data.adepters.fullFinaceAdapter
 import com.example.businesshelper.data.api.Currencies
 import com.example.businesshelper.data.api.InterfaceCurrency
 import com.example.businesshelper.data.api.RetrofitCurrency
-import com.example.businesshelper.data.api.Valute
 import com.example.businesshelper.data.fullFinance
 import com.example.businesshelper.databinding.FragmentFinanceBinding
 import com.google.firebase.database.*
@@ -47,8 +46,8 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
                 if(response.isSuccessful){
                     try {
                         val temp = response.body()!!
-                        bind.outputUSDCurrency.setText(temp!!.Valutes!!.get("USD")!!.Value)
-                        bind.outputEURCurrency.setText(temp!!.Valutes!!.get("EUR")!!.Value)
+                        bind.outputUSDCurrency.text = temp.Valute!!["USD"]!!.Value
+                        bind.outputEURCurrency.text = temp.Valute!!["EUR"]!!.Value
                     }
                     catch (e:Exception)
                     { Toast.makeText(bind.root.context,e.message,Toast.LENGTH_SHORT).show() }
