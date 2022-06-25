@@ -13,7 +13,7 @@ import com.example.businesshelper.data.Order
 import com.example.businesshelper.data.fullFinance
 import java.util.ArrayList
 
-class fullFinaceAdapter(val context: Context, val list: ArrayList<fullFinance>):RecyclerView.Adapter<fullFinaceAdapter.MyVM>() {
+class fullFinaceAdapter(val context: Context, val list: List<fullFinance>):RecyclerView.Adapter<fullFinaceAdapter.MyVM>() {
 
     class MyVM(itemView: View):RecyclerView.ViewHolder(itemView) {
         val title:TextView = itemView.findViewById(R.id.title_fin_VM)

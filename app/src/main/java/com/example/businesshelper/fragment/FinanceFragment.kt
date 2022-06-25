@@ -28,9 +28,6 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
     private lateinit var bind:FragmentFinanceBinding
     private lateinit var database: DatabaseReference
 
-    private lateinit var listInCome:ArrayList<fullFinance>
-    private lateinit var listExpenses:ArrayList<fullFinance>
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -77,17 +74,17 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
         bind.rVIncomeProgress.setHasFixedSize(true)
         bind.rVExpenseProgress.setHasFixedSize(true)
 
-        getExpense()
-        getIncome()
+        val expensesList = getExpense()
+        val inComeList = getIncome()
 
-        bind.rVIncomeProgress.adapter = fullFinaceAdapter(requireContext(),listInCome)
-        bind.rVExpenseProgress.adapter = fullFinaceAdapter(requireContext(),listExpenses)
+        bind.rVIncomeProgress.adapter = fullFinaceAdapter(requireContext(),inComeList)
+        bind.rVExpenseProgress.adapter = fullFinaceAdapter(requireContext(),expensesList)
 
         return bind.root
     }
 
-    fun getIncome() {
-        listInCome= arrayListOf(
+    fun getIncome():List<fullFinance> {
+        val listInCome= listOf<fullFinance>(
             fullFinance(type = "tic1", title = resources.getString(R.string.tic1)),
             fullFinance(type = "tic2", title = resources.getString(R.string.tic2)),
             fullFinance(type = "tic3", title = resources.getString(R.string.tic3)),
@@ -98,11 +95,12 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
                 if (snapshot.exists()) {
                     for (item in snapshot.children) {
                         val temp = item.getValue(InCome::class.java)
-                        for (value in listInCome) {
-                            if(value.type==temp!!.type){
-                                val plus = value.currentSum.plus(temp.sum)
-                                value.currentSum = plus
-                            } } } } }
+
+                        listInCome.forEach {
+                            if(it.type == temp!!.type){
+                            it.currentSum.plus(temp.sum)
+                        } }
+                    } } }
 
             override fun onCancelled(error: DatabaseError) {
                 Log.w(ContentValues.TAG, "loadPost:onCancelled", error.toException()) }
@@ -113,19 +111,21 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
                 if (snapshot.exists()) {
                     for (item in snapshot.children) {
                         val temp = item.getValue(InCome::class.java)
-                        for (value in listInCome) {
-                            if(value.type==temp!!.type){
-                                val plus = value.futureSum.plus(temp.sum)
-                                value.futureSum = plus
-                            } } } } }
+
+                        listInCome.forEach {
+                            if(it.type == temp!!.type){
+                                it.futureSum.plus(temp.sum)
+                            } }
+                    } } }
 
             override fun onCancelled(error: DatabaseError) {
                 Log.w(ContentValues.TAG, "loadPost:onCancelled", error.toException()) }
         })
+        return listInCome
     }
 
-    fun  getExpense(){
-        listExpenses= arrayListOf(
+    fun  getExpense():List<fullFinance>{
+        val listExpenses= listOf<fullFinance>(
             fullFinance(type = "te1", title = resources.getString(R.string.te1)),
             fullFinance(type = "te2", title = resources.getString(R.string.te2)),
             fullFinance(type = "te3", title = resources.getString(R.string.te3)),
@@ -142,11 +142,12 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
                 if (snapshot.exists()) {
                     for (item in snapshot.children) {
                         val temp = item.getValue(Expenses::class.java)
-                        for (value in listExpenses) {
-                            if(value.type==temp!!.type){
-                                val plus = value.currentSum.plus(temp.sum)
-                                value.currentSum = plus
-                            } } } } }
+
+                        listExpenses.forEach {
+                            if (it.type == temp!!.type){
+                              it.currentSum.plus(temp.sum)
+                            } }
+                    } } }
 
             override fun onCancelled(error: DatabaseError) {
                 Log.w(ContentValues.TAG, "loadPost:onCancelled", error.toException()) }
@@ -157,14 +158,16 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
                 if (snapshot.exists()) {
                     for (item in snapshot.children) {
                         val temp = item.getValue(Expenses::class.java)
-                        for (value in listExpenses) {
-                            if(value.type==temp!!.type){
-                                val plus = value.futureSum.plus(temp.sum)
-                                value.futureSum = plus
-                            } } } } }
+
+                        listExpenses.forEach {
+                            if (it.type == temp!!.type){
+                                it.futureSum.plus(temp.sum)
+                            } }
+                    } } }
 
             override fun onCancelled(error: DatabaseError) {
                 Log.w(ContentValues.TAG, "loadPost:onCancelled", error.toException()) }
         })
+        return listExpenses
     }
 }
