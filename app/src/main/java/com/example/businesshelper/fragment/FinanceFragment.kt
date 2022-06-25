@@ -98,7 +98,7 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
 
                         listInCome.forEach {
                             if(it.type == temp!!.type){
-                            it.currentSum.plus(temp.sum)
+                            it.currentSum+=temp.sum
                         } }
                     } } }
 
@@ -114,7 +114,7 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
 
                         listInCome.forEach {
                             if(it.type == temp!!.type){
-                                it.futureSum.plus(temp.sum)
+                                it.futureSum+=temp.sum
                             } }
                     } } }
 
@@ -145,7 +145,7 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
 
                         listExpenses.forEach {
                             if (it.type == temp!!.type){
-                              it.currentSum.plus(temp.sum)
+                              it.currentSum+=temp.sum
                             } }
                     } } }
 
@@ -161,7 +161,7 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
 
                         listExpenses.forEach {
                             if (it.type == temp!!.type){
-                                it.futureSum.plus(temp.sum)
+                                it.futureSum+=temp.sum
                             } }
                     } } }
 
