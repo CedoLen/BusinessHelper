@@ -138,7 +138,7 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
             fullFinance(type = "te9", title = resources.getString(R.string.te9)),
             fullFinance(type = "te10", title = resources.getString(R.string.te10)))
 
-        database.child("inCome").addValueEventListener(object : ValueEventListener{
+        database.child("expenses").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     for (item in snapshot.children) {
@@ -153,7 +153,7 @@ class FinanceFragment:Fragment(R.layout.fragment_finance) {
                 Log.w(ContentValues.TAG, "loadPost:onCancelled", error.toException()) }
         })
 
-        database.child("futureInCome").addValueEventListener(object : ValueEventListener{
+        database.child("futureExpenses").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     for (item in snapshot.children) {
